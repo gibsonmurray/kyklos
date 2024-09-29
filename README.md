@@ -89,7 +89,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Author
 
-The one and only[Gibson Murray](https://gibsonmurray.com)
+The one and only [Gibson Murray](https://gibsonmurray.com)
 
 ## Acknowledgments
 
