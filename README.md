@@ -59,19 +59,19 @@ const MyComponent = () => {
 
 ### `useMounted(callback: () => void)`
 
-Runs the provided callback function when the component is mounted.
+Runs the provided callback function only when the component is mounted.
 
 -   `callback`: A function to be executed on component mount.
 
 ### `useUpdated(callback: () => void)`
 
-Runs the provided callback function when the component is updated.
+Runs the provided callback function when the component is updated. This is different from `useEffect` because the callback will not be executed on the first render.
 
 -   `callback`: A function to be executed on component update.
 
 ### `useUnmounted(callback: () => void)`
 
-Runs the provided callback function when the component is about to unmount.
+Runs the provided callback function only when the component is about to unmount. Used for cleanup.
 
 -   `callback`: A function to be executed before the component unmounts.
 
