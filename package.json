@@ -1,0 +1,34 @@
+{
+    "name": "kyklos",
+    "version": "0.0.1",
+    "description": "Lifecycle hooks for React to abstract useEffect",
+    "module": "dist/index.js",
+    "type": "module",
+    "exports": {
+        ".": {
+            "import": "./dist/index.js",
+            "types": "./dist/index.d.ts"
+        }
+    },
+    "scripts": {
+        "build": "tsup"
+    },
+    "devDependencies": {
+        "@types/bun": "latest",
+        "@types/react": "^18.3.10",
+        "tsup": "^8.3.0",
+        "typescript": "^5.6.2"
+    },
+    "dependencies": {
+        "react": "^18.3.1"
+    },
+    "keywords": [
+        "react",
+        "hooks",
+        "lifecycle",
+        "useEffect",
+        "onMounted",
+        "onUnmounted",
+        "onUpdated"
+    ]
+}
