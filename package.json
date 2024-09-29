@@ -1,6 +1,6 @@
 {
     "name": "kyklos",
-    "version": "1.0.0-beta.1",
+    "version": "1.0.0-beta.2",
     "description": "Lifecycle hooks for React to abstract useEffect",
     "module": "dist/index.js",
     "type": "module",

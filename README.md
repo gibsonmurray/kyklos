@@ -93,5 +93,5 @@ The one and only [Gibson Murray](https://gibsonmurray.com)
 
 ## Acknowledgments
 
--   [React](https://react.dev/) team for making things complicated
+-   [React](https://react.dev/) team for trying to fit everything into `useEffect` (don't worry, much love <3)
 -   All contributors and users of Kyklos
