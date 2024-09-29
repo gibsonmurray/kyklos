@@ -4,7 +4,6 @@
 
 Kyklos, derived from the Greek word κύκλος meaning "circle" or "cycle," embodies the concept of lifecycle in React components.
 
-
 Kyklos is a lightweight React library that provides lifecycle hooks to abstract and simplify the use of `useEffect`. It offers a more intuitive and readable way to handle component lifecycle events in functional components.
 
 ## Features
@@ -90,7 +89,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Author
 
-Gibson Murray
+The one and only[Gibson Murray](https://gibsonmurray.com)
 
 ## Acknowledgments
 
