@@ -32,6 +32,7 @@ examples
 .npmrc
 .nvmrc
 .yarnrc
+bun.lockb
 
 # Source files (if you're publishing compiled code)
 src
