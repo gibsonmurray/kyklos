@@ -1,4 +1,4 @@
-import { useEffect, useCallback } from "react"
+import { useEffect, useCallback, useRef } from "react"
 
 /**
  * Custom hook that runs a callback function when the component is mounted.
@@ -10,12 +10,20 @@ export function useMounted(callback: () => void) {
 }
 
 /**
- * Custom hook that runs a callback function when the component is updated.
+ * Custom hook that runs a callback function when the component is updated, but not when it first mounts.
  * @param {Function} callback - The function to be called when the component is updated.
  */
 export function useUpdated(callback: () => void) {
     const memoizedCallback = useCallback(callback, [callback])
-    useEffect(memoizedCallback)
+    const isFirstRender = useRef(true)
+
+    useEffect(() => {
+        if (isFirstRender.current) {
+            isFirstRender.current = false
+        } else {
+            memoizedCallback()
+        }
+    })
 }
 
 /**
