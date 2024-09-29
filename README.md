@@ -41,17 +41,29 @@ Here's how you can use these hooks in your React components:
 import { useMounted, useUpdated, useUnmounted } from "kyklos"
 
 const MyComponent = () => {
+    const [someState, setSomeState] = useState(0)
+
     useMounted(() => {
         console.log("Component mounted")
     })
 
     useUpdated(() => {
-        console.log("Component updated")
+        console.log("Component updated. I will run on every re-render.")
     })
+
+    useUpdated(() => {
+        console.log(`someState updated to: ${someState}`)
+    }, [someState])
 
     useUnmounted(() => {
         console.log("Component unmounted")
     })
+
+    return (
+        <button onClick={() => setSomeState((prev) => prev + 1)}>
+            Increment
+        </button>
+    )
 }
 ```
 
@@ -63,11 +75,12 @@ Runs the provided callback function only when the component is mounted.
 
 -   `callback`: A function to be executed on component mount.
 
-### `useUpdated(callback: () => void)`
+### `useUpdated(callback: () => void, deps?: DependencyList)`
 
 Runs the provided callback function when the component is updated. This is different from `useEffect` because the callback will not be executed on the first render.
 
 -   `callback`: A function to be executed on component update.
+-   `deps`: (optional) Stateful dependencies that trigger the callback when they change. If they are present, the callback will only be executed if the dependencies have changed. Otherwise, it will be executed on every re-render.
 
 ### `useUnmounted(callback: () => void)`
 
