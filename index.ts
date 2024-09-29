@@ -34,3 +34,12 @@ export function useUnmounted(callback: () => void) {
         return callback
     }, [])
 }
+
+
+/**
+ * Brings jQuery to React (sorta). A wrapper around useEffect that allows you to use jQuery-like syntax.
+ * @param {Function} callback - The function to be called when the component is mounted.
+ * @param {DependencyList} deps - (optional) Stateful dependencies that trigger the callback when they change.
+ * @returns {void}
+ */
+export const $ = useEffect

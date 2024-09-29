@@ -34,11 +34,12 @@ Kyklos exports three main hooks:
 1. `useMounted`: Runs a callback when the component is mounted.
 2. `useUpdated`: Runs a callback when the component is updated.
 3. `useUnmounted`: Runs a callback when the component is unmounted.
+4. `$`: A wrapper around `useEffect` that allows you to use jQuery-like syntax.
 
 Here's how you can use these hooks in your React components:
 
 ```tsx
-import { useMounted, useUpdated, useUnmounted } from "kyklos"
+import { useMounted, useUpdated, useUnmounted, $ } from "kyklos"
 
 const MyComponent = () => {
     const [someState, setSomeState] = useState(0)
@@ -58,6 +59,10 @@ const MyComponent = () => {
     useUnmounted(() => {
         console.log("Component unmounted")
     })
+
+    $(() => {
+        console.log("Component mounted")
+    }, [someState])
 
     return (
         <button onClick={() => setSomeState((prev) => prev + 1)}>
@@ -88,6 +93,13 @@ Runs the provided callback function only when the component is about to unmount.
 
 -   `callback`: A function to be executed before the component unmounts.
 
+### `$(callback: () => void, deps?: DependencyList)`
+
+A wrapper around `useEffect` that allows you to use jQuery-like syntax.
+
+-   `callback`: A function to be executed on component mount.
+-   `deps`: (optional) Stateful dependencies that trigger the callback when they change. If they are present, the callback will only be executed if the dependencies have changed. Otherwise, it will be executed on every re-render.
+
 ## TypeScript Support
 
 Kyklos is written in TypeScript and provides type definitions out of the box. No additional setup is required to use it in a TypeScript project.
@@ -106,5 +118,7 @@ The one and only [Gibson Murray](https://gibsonmurray.com)
 
 ## Acknowledgments
 
--   [React](https://react.dev/) team for trying to fit everything into `useEffect` (don't worry, much love <3)
+-   [React](https://react.dev/) team for trying to fit everything into `useEffect` (with love <3)
+-   [Vue](https://vuejs.org/) for inspiring this project
+-   [jQuery](https://jquery.com/) for being the OGs
 -   All contributors and users of Kyklos
